@@ -32,8 +32,8 @@
 # {工具名稱}
 簡介...
 
-![standard-readme compliant](https://img.shields.io/static/v1?label=build&message=pass&color=brightgreen)
-![standard-readme compliant](https://img.shields.io/static/v1?label=updated&message=2023/10/14&color=blue)
+<img src="https://img.shields.io/static/v1?label=build&message=pass&color=brightgreen"/>
+<img src="https://img.shields.io/static/v1?label=updated&message=2023/10/14&color=blue"/>
 
 ## 前置條件
 列出需要安裝的第三方套件
