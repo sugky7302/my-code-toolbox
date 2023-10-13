@@ -4,8 +4,8 @@
 <div style="background: #f7f8f9; border-radius: 10px; padding: 10px; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
     <h4 style="margin:0">目前提供下列語言的工具箱：</h4>
     <p style="font-size:0.9rem; margin: 0 0 8px 0">括弧是數量</p>
-    <img src="https://img.shields.io/static/v1?label=Python&message=3&color==brightgreen"/>
-    <img src="https://img.shields.io/static/v1?label=Golang&message=3&color==brightgreen"/>
+    <img src="https://img.shields.io/static/v1?label=Python&message=2&color==brightgreen"/>
+    <img src="https://img.shields.io/static/v1?label=Golang&message=7&color==brightgreen"/>
     <p style="margin: 30px 0 0 0;">最後更新於 <strong>2023/10/14 15:30</strong></p>
 </div>
 <br>
@@ -43,5 +43,8 @@
 - 如果是自己寫的，請附註是參考哪些網頁
 
 ```
+
+## 工具箱程式碼規範
+為了提供優質、標準、開箱即用的模組，請制定各程式語言的寫作風格以及於 `tests/` 資料夾提供完整的單元測試(Unit Test)、基準測試(Benchmark)、完整性測試(Workflow)。除此之外，程式碼盡量寫成該程式語言推薦的第三方模組的形式，讓他人可以直接使用該程式語言的套件管理器直接下載、安裝。
 
 
