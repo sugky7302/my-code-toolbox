@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 from sqlalchemy.orm import Session
-import lib.mylog.orm as ormlog
 
 class ORMInfo:
     '''
@@ -41,7 +40,6 @@ class ORM(ABC):
         '''
         self._session = self.connect()
         if self._session is None:
-            ormlog.logger.error(f"無法連上資料庫 {self.dsn}...")
             raise Exception(f"無法連上資料庫 {self.dsn}...")
 
         return self._session
@@ -52,7 +50,7 @@ class ORM(ABC):
         
         # 如果有例外發生，就恢復到 commit 之前的狀態
         if exc_type is not None:
-            ormlog.logger.error(f"ORM 發生{exc_type}錯誤，錯誤為「{exc_value}」，回滾資料庫...")
+            print(f"ORM 發生{exc_type}錯誤，錯誤為「{exc_value}」，回滾資料庫...")
             self._session.rollback()
 
         #? 想想看怎麼根據語句來決定要不要 commit

@@ -1,0 +1,4 @@
+# Python 快取
+*.pyc
+# Golang 快取
+.DS_Store

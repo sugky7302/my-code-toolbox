@@ -4,7 +4,6 @@ from .model import ORM, ORMInfo
 from .oracle import Oracle
 import lib.mylog.orm as ormlog
 
-ormlog.init_orm()
 BASE = declarative_base()
 
 INSTANCES = {}
