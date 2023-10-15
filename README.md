@@ -6,7 +6,8 @@
     <p style="font-size:0.9rem; margin: 0 0 8px 0">括弧是數量</p>
     <img src="https://img.shields.io/static/v1?label=Python&message=2&color==brightgreen"/>
     <img src="https://img.shields.io/static/v1?label=Golang&message=7&color==brightgreen"/>
-    <p style="margin: 30px 0 0 0;">最後更新於 <strong>2023/10/14 18:08</strong></p>
+    <img src="https://img.shields.io/static/v1?label=Docker&message=3&color==brightgreen"/>
+    <p style="margin: 30px 0 0 0;">最後更新於 <strong>2023/10/15 15:46</strong></p>
 </div>
 <br>
 
@@ -39,7 +40,7 @@
 列出需要安裝的第三方套件
 
 ## 更新日誌
-跟之前一樣的格式
+### 1.0.0 - 2023-10-14
 
 ## 測試報告
 請使用該語言提供的測試工具，對每一個函數做單元測試，並把測試報告以各種形式貼在這裡！
