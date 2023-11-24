@@ -12,6 +12,7 @@
 
 ### 擴充
 - loadsh: 針對 **Javascript** 內建的數組、對象、函數、字串、數學等提供高效能且簡易的組件庫。可在 **Typescript** 正常運作。
+- download-something: 提供如何把網頁內容下載為指定格式的函數。
 
 ## FAQ
 1. JavaScript 要如何在 Typescript 使用？
