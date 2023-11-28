@@ -7,6 +7,7 @@
 ### HTML 強化
 - iscroll: 最受歡迎的高性能滾動條庫，能適應所有裝置，而且各大廠商如 Apple、Microsoft 都在使用。
 - calculate-textarea-height: 計算 textarea 的文字行數、高度。
+- autosize: 最受歡迎的 textarea 自適應高度庫。
 
 ### 日期&時間
 - dayjs: 非常精簡且快速的 **Javascript** 工具庫，提供非常豐富的函數操作日期和時間，能夠完全取代原生的 Date 物件。可在 **Typescript** 正常運作。
