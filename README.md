@@ -5,11 +5,11 @@
     <h4 style="margin:0">目前提供下列語言的工具箱：</h4>
     <p style="font-size:0.9rem; margin: 0 0 8px 0">括弧是數量</p>
     <img src="https://img.shields.io/static/v1?label=Python&message=2&color==brightgreen"/>
-    <img src="https://img.shields.io/static/v1?label=Golang&message=7&color==brightgreen"/>
+    <img src="https://img.shields.io/static/v1?label=Golang&message=8&color==brightgreen"/>
     <img src="https://img.shields.io/static/v1?label=Docker&message=4&color==brightgreen"/>
     <img src="https://img.shields.io/static/v1?label=Typescript&message=7&color==brightgreen"/>
     <img src="https://img.shields.io/static/v1?label=CSS&message=1&color==brightgreen"/>
-    <p style="margin: 30px 0 0 0;">最後更新於 <strong>2023/11/29 16:48</strong></p>
+    <p style="margin: 30px 0 0 0;">最後更新於 <strong>2023/11/29 23:06</strong></p>
 </div>
 <br>
 
