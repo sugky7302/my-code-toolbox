@@ -85,7 +85,10 @@ export function calcTextareaHeight(targetElement: HTMLTextAreaElement, minRows =
     }
 
     // 清空 hiddenTextarea 的值，然後計算一行的高度
-    hiddenTextarea.value = "";
+    //* 這邊的 hiddenTextarea.value = "我" 是因為中文字的高度跟英文字的高度不一樣，
+    //* 使用英文字、空格或數字，會造成 Chrome 計算出來的高度少 2px，改成中文字就不會有這個問題。
+    // Arvin Yang - 2023/12/01
+    hiddenTextarea.value = "我";
     const singleRowHeight = hiddenTextarea.scrollHeight - paddingSize;
 
     if (isNumber(minRows)) {
