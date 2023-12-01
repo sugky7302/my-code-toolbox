@@ -16,6 +16,9 @@
 - loadsh: 針對 **Javascript** 內建的數組、對象、函數、字串、數學等提供高效能且簡易的組件庫。可在 **Typescript** 正常運作。
 - download-something: 提供如何把網頁內容下載為指定格式的函數。
 
+### Angular 強化
+- angular-click-outside: 觸發點擊元素外部事件的監聽器。
+
 ## FAQ
 1. JavaScript 要如何在 Typescript 使用？
 答: 請先在 `tsconfig.json` 添加 `"allowJS": true`，看情況加入 `"checkJs": false,`。此外，需要在 `tsconfig.json` 或者 `tsconfig.app.json` 添加

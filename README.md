@@ -7,9 +7,9 @@
     <img src="https://img.shields.io/static/v1?label=Python&message=2&color==brightgreen"/>
     <img src="https://img.shields.io/static/v1?label=Golang&message=8&color==brightgreen"/>
     <img src="https://img.shields.io/static/v1?label=Docker&message=4&color==brightgreen"/>
-    <img src="https://img.shields.io/static/v1?label=Typescript&message=7&color==brightgreen"/>
+    <img src="https://img.shields.io/static/v1?label=Typescript&message=8&color==brightgreen"/>
     <img src="https://img.shields.io/static/v1?label=CSS&message=1&color==brightgreen"/>
-    <p style="margin: 30px 0 0 0;">最後更新於 <strong>2023/11/29 23:06</strong></p>
+    <p style="margin: 30px 0 0 0;">最後更新於 <strong>2023/12/01 14:41</strong></p>
 </div>
 <br>
 
