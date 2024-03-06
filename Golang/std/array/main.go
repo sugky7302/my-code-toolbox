@@ -69,11 +69,11 @@ func Filter[T any](slice []T, f func(T) bool) []T {
 // 然後再將結果和下一個元素進行操作，直到遍歷完所有元素，最終返回一個累積的值。
 /*
  * param {[]T} slice - 數組
- * param {func(initial T, element T) T} f - 操作函數
- * param {T} initial - 初始值
- * return {T}
+ * param {func(initial V, element T) V} f - 操作函數
+ * param {V} initial - 初始值
+ * return {V}
  */
-func Reduce[T any](slice []T, f func(T, T) T, initial T) T {
+func Reduce[T, V any](slice []T, f func(V, T) V, initial V) V {
 	result := initial
 	for _, val := range slice {
 		result = f(result, val)
