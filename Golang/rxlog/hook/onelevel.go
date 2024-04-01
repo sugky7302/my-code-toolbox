@@ -1,7 +1,7 @@
 package rxlog_hook
 
 import (
-	"github.com/sirupsen/logrus"
+	"app/src/pkg/rxlog/logrus"
 )
 
 // SpecifiedLevelHook 是指定輸出等級的 logrus.Hook，

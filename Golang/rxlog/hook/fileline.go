@@ -5,7 +5,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/sirupsen/logrus"
+	"app/src/pkg/rxlog/logrus"
 )
 
 // FileLineHook 是專門用來記錄呼叫函數的檔案名稱與行數的 logrus.Hook，
@@ -14,10 +14,9 @@ import (
 type FileLineHook struct{}
 
 func (hook *FileLineHook) Fire(entry *logrus.Entry) error {
-	entry.Logger.SetReportCaller(true)
 	file, line := getCaller(entry.Level)
-	entry.Data["file"] = strings.Replace(file, os.Getenv("GO_PROJ_PATH")+"/", "", 1)
-	entry.Data["line"] = line
+	entry.SetData("filepath", strings.Replace(file, os.Getenv("GO_PROJ_PATH")+"/", "", 1))
+	entry.SetData("linenumber", line)
 	return nil
 }
 

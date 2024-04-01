@@ -1,11 +1,11 @@
 package rxlog
 
 import (
-	rxlog_formatter "app/pkg/rxlog/formatter"
-	rxlog_hook "app/pkg/rxlog/hook"
+	rxlog_formatter "app/src/pkg/rxlog/formatter"
+	rxlog_hook "app/src/pkg/rxlog/hook"
 	"os"
 
-	"github.com/sirupsen/logrus"
+	"app/src/pkg/rxlog/logrus"
 )
 
 var (
@@ -53,9 +53,15 @@ func Multi(loggers ...*Logger) *Logger {
 
 // New 會生成一個新的 Logger 實例。
 func New(level logrus.Level) *Logger {
+	instance := logrus.New()
+	// 讓 logrus 可以記錄呼叫函數的檔案名稱、行數、With 的值。
+	// 在 FileLineHook 中，entry.Logger.SetReportCaller(true) 會造成程式卡住，
+	// 所以這邊就把它放在這裡。 - Arvin Yang - 2024/03/02
+	instance.SetReportCaller(true)
+
 	logger := (&Logger{
 		formatters: []rxlog_formatter.Formatter{},
-		entry:      logrus.NewEntry(logrus.New()),
+		entry:      logrus.NewEntry(instance),
 	}).Level(level)
 
 	logger.entry.Logger.SetFormatter(&FormatterRunner{logger: logger})

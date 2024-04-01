@@ -1,8 +1,8 @@
 package rxlog
 
 import (
-	rxlog_formatter "app/pkg/rxlog/formatter"
-	rxlog_util "app/pkg/rxlog/util"
+	rxlog_formatter "app/src/pkg/rxlog/formatter"
+	rxlog_util "app/src/pkg/rxlog/util"
 	"bytes"
 	"fmt"
 	"io"
@@ -10,8 +10,8 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/natefinch/lumberjack"
-	"github.com/sirupsen/logrus"
+	"app/src/pkg/rxlog/logrus"
+	"app/src/pkg/rxlog/lumberjack"
 )
 
 var (
@@ -43,7 +43,8 @@ func (m *FormatterRunner) Format(entry *logrus.Entry) ([]byte, error) {
 		b = &bytes.Buffer{}
 	}
 
-	dataStr := rxlog_util.Fields2Str(entry.Data, nil)
+	// 這裡要用複製的方式，不然會產生 fatal error: concurrent map iteration and map write
+	dataStr := rxlog_util.Fields2Str(entry.Dup().Data, nil)
 
 	if m.logger.formatters != nil && len(m.logger.formatters) > 0 {
 		for _, formatter := range m.logger.formatters {
@@ -172,10 +173,11 @@ func (m *Logger) OutputFile(filename string, maxSize int, maxBackups int, maxAge
 }
 
 // With 是為了方便在日誌中加入額外的資訊。
+// 禁止使用 filepath 和 linenumber 這兩個 key，因為這兩個 key 是由 FileLineHook 自動加入的。
 // 這裡一定要更新 entry，不然會沒有效果。
 func (m *Logger) With(key string, value any) *Logger {
 	if m.entry != nil {
-		m.entry.Data[key] = value
+		m.entry.SetData(key, value)
 	}
 
 	for _, child := range m.children {

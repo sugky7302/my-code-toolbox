@@ -1,14 +1,16 @@
 package rxlog_util
 
 import (
-	"cmp"
 	"fmt"
-	"slices"
 	"strings"
 
-	"github.com/sirupsen/logrus"
+	"golang.org/x/exp/slices"
+
+	"app/src/pkg/rxlog/logrus"
 )
 
+// Fields2Str 用到 range，會去讀取 fields，在多執行緒的情況下，
+// 容易出現 fatal error: concurrent map iteration and map write
 func Fields2Str(fields logrus.Fields, exclude []string) string {
 	arr := make([]string, 0)
 	for k, v := range fields {
@@ -21,8 +23,8 @@ func Fields2Str(fields logrus.Fields, exclude []string) string {
 	}
 
 	// 按照 key 的字母順序排序
-	slices.SortFunc(arr, func(a, b string) int {
-		return cmp.Compare(strings.ToLower(a), strings.ToLower(b))
+	slices.SortFunc(arr, func(a, b string) bool {
+		return strings.Compare(strings.ToLower(a), strings.ToLower(b)) < 0
 	})
 
 	return " " + strings.Join(arr, " ")

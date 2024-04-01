@@ -1,7 +1,7 @@
 package rxlog_hook
 
 import (
-	"github.com/sirupsen/logrus"
+	"app/src/pkg/rxlog/logrus"
 )
 
 // MaxLevelHook 是用來限制輸出等級的 logrus.Hook，

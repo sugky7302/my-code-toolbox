@@ -1,6 +1,6 @@
 package rxlog_formatter
 
-import "github.com/sirupsen/logrus"
+import "app/src/pkg/rxlog/logrus"
 
 // 因為 logrus 的 Formatter 只能定義一個，所以這邊用介面來實現。
 type Formatter interface {

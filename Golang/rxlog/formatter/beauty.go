@@ -1,11 +1,12 @@
 package rxlog_formatter
 
 import (
-	util "app/pkg/rxlog/util"
+	util "app/src/pkg/rxlog/util"
 	"fmt"
 
+	"app/src/pkg/rxlog/logrus"
+
 	"github.com/fatih/color"
-	"github.com/sirupsen/logrus"
 )
 
 type BeautyFormatter struct {
@@ -22,23 +23,24 @@ func (f *BeautyFormatter) Format(entry *logrus.Entry) *logrus.Entry {
 	}
 
 	timestamp := entry.Time.Format("2006/01/02 15:04:05")
-	fields := util.Fields2Str(entry.Data, []string{"file", "line"})
-
-	if entry.HasCaller() {
+	fields := util.Fields2Str(entry.Dup().Data, []string{"filepath", "linenumber"})
+	// 用 entry.HasCaller() 無法判斷是否有使用 FilelineHook
+	// 所以這裡就直接判斷 filepath 跟 linenumber 是否有值
+	if entry.GetData("filepath") != nil || entry.GetData("linenumber") != nil {
 		if f.Color {
 			entry.Message = fmt.Sprintf("[%s] %s <%s:%d> %s%s",
 				timestamp,
 				colorizeLevel(entry.Level),
-				entry.Data["file"],
-				entry.Data["line"],
+				entry.GetData("filepath"),
+				entry.GetData("linenumber"),
 				entry.Message,
 				fields)
 		} else {
 			entry.Message = fmt.Sprintf("[%s] %s <%s:%d> %s%s",
 				timestamp,
 				GetLevelStr(entry.Level),
-				entry.Data["file"],
-				entry.Data["line"],
+				entry.GetData("filepath"),
+				entry.GetData("linenumber"),
 				entry.Message,
 				fields)
 		}

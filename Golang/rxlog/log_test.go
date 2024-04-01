@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	rxlog_formatter "app/pkg/rxlog/formatter"
-	rxlog_hook "app/pkg/rxlog/hook"
+	rxlog_formatter "app/src/pkg/rxlog/formatter"
+	rxlog_hook "app/src/pkg/rxlog/hook"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -100,7 +100,7 @@ func TestDebug(t *testing.T) {
 func TestInfo(t *testing.T) {
 	c := assert.New(t)
 	Info("test")
-	time.Sleep(10 * time.Millisecond) // 等待寫入
+	time.Sleep(100 * time.Millisecond) // 等待寫入
 	expected := fmt.Sprintf("time=%s level=INF msg=test", time.Now().Format("2006/01/02 15:04:05-07:00"))
 	c.Equal(true, FileExistStringLine(PATH+"/access.log", expected))
 }
