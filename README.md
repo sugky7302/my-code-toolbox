@@ -4,12 +4,12 @@
 <div style="background: #f7f8f9; border-radius: 10px; padding: 10px; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
     <h4 style="margin:0">目前提供下列語言的工具箱：</h4>
     <p style="font-size:0.9rem; margin: 0 0 8px 0">括弧是數量</p>
-    <img src="https://img.shields.io/static/v1?label=Python&message=2&color==brightgreen"/>
+    <img src="https://img.shields.io/static/v1?label=Python&message=3&color==brightgreen"/>
     <img src="https://img.shields.io/static/v1?label=Golang&message=8&color==brightgreen"/>
     <img src="https://img.shields.io/static/v1?label=Docker&message=4&color==brightgreen"/>
     <img src="https://img.shields.io/static/v1?label=Typescript&message=9&color==brightgreen"/>
     <img src="https://img.shields.io/static/v1?label=CSS&message=1&color==brightgreen"/>
-    <p style="margin: 30px 0 0 0;">最後更新於 <strong>2024/04/01 17:29</strong></p>
+    <p style="margin: 30px 0 0 0;">最後更新於 <strong>2024/04/01 17:34</strong></p>
 </div>
 <br>
 
