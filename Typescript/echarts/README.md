@@ -2,12 +2,15 @@
 Ngx Echarts 的簡單封裝，並提供 Angular 組件支援，開箱即用。
 
 <img src="https://img.shields.io/static/v1?label=build&message=pass&color=brightgreen"/>
-<img src="https://img.shields.io/static/v1?label=updated&message=2023/10/23&color=blue"/>
+<img src="https://img.shields.io/static/v1?label=updated&message=2024/06/18&color=blue"/>
 
 ## 前置條件
 - npm/ngx-echarts: 一定要安裝這個套件，本套件是建立在它之上。
 
 ## 更新日誌
+### 1.1.0 - 2024-06-18
+- 加入 BarChart、BoxplotChart、CandlestickChart。
+
 ### 1.0.0 - 2023-10-23
 - 複製自 umc-iphotos。
 
